@@ -25,7 +25,7 @@ The data set included with the assignment is based on 2014 ACS 1-year estimates 
 5. Push the above changes to GitHub or GitLab.
 
 ## Your Task: Visualize data variables Healthcare vs Age
-![health_vs_age.png](health_vs_age.png)
+![health_age.png](health_age.png)
 
 You need to create a scatter plot between two of the data variables. 
 
