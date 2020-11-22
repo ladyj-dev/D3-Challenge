@@ -1,11 +1,12 @@
-# D3-Challenge
-Analyzing trends using D3, html and Javascript to create charts, graphs and interactive elements
-# D3 Homework - Data Journalism and D3
+# D3-Challenge Data Journalism and D3
+*Analyzing trends using D3, html and Javascript to create charts, graphs and interactive elements
+
+![journalism_to_do.png](journalism_to_do.png)
 
 
 ## Background
 
-Welcome to the newsroom! As a data visualization position for a the Nested For-Loop, a major metro paper you're tasked with analyzing the current trends shaping people's lives, as well as creating charts, graphs, and interactive elements to help readers understand your findings.
+Welcome to the newsroom! You have accepted a position as a data visualization specialist for 'The Nested For-Loop', a rural news paper that's getting a lot of attention recently as more people move to the area now that working from home has become the norm. You are tasked with analyzing the current trends shaping people's lives, as well as creating charts, graphs, and interactive elements to help readers understand your findings.
 
 The editor wants to run a series of feature stories about the health risks facing particular demographics. She's counting on you to sniff out the first story idea by sifting through information from the U.S. Census Bureau and the Behavioral Risk Factor Surveillance System.
 
@@ -23,10 +24,8 @@ The data set included with the assignment is based on 2014 ACS 1-year estimates 
 
 5. Push the above changes to GitHub or GitLab.
 
-## Your Task
-
-### Core Assignment: D3 Dabbler (Required Assignment)
-
+## Your Task: Visualize data variables Healthcare vs Age
+![health_vs_age.png](health_vs_age.png)
 
 You need to create a scatter plot between two of the data variables. 
 
