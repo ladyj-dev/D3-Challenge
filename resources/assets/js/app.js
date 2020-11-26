@@ -99,7 +99,7 @@ d3.csv("data.csv").then(function (data) {
           `translate(${width / 2}, ${height + margin.top + 30})`
         )
         .attr("class", "axisText")
-        .text("In Age (%)");
+        .text("Age");
       // left axis
       chartGroup
         .append("text")
