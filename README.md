@@ -38,3 +38,5 @@ Using the D3 techniques, create a scatter plot that represents each state with c
 * Note: You'll need to use `python -m http.server` to run the visualization. This will host the page at `localhost:8000` in your web browser.
 
 * Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
+
+![mynewspaper_nested.png](mynewspaper_nested.png)
