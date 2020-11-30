@@ -27,17 +27,21 @@ var svg = d3
 
 var chartGroup = svg
   .append("g")
-  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+  .attr("transform", `translate(${margin.left}, ${margin.top})`)
+  .attr("class", "chart");
 
 // Step 3:
 // Import data from the donuts.csv file
 // use + to indicate that age and healthcare are numbers
 // =================================
-d3.csv("data.csv").then(function (data) {
-  data.age = +data.age;
-  data.healthcare = +data.healthcare;
-  console.log(data);
+d3.csv("./assets/data/data.csv").then(function (data) {
+    console.log(data);
 
+    data.forEach(function(data){
+    data.age = +data.age;
+    data.healthcare = +data.healthcare;
+ });
+    
   // Step 5: Create the scales for the chart
   // =================================
   var xLinearScale = d3
@@ -54,7 +58,7 @@ d3.csv("data.csv").then(function (data) {
   var bottomAxis = d3.axisBottom(xLinearScale);
   var leftAxis = d3.axisLeft(yLinearScale);
 
-  //   append axex to chartgroup
+  //   append axes to chartgroup
   chartGroup
     .append("g")
     .attr("transform", `translate(0, ${height})`)
