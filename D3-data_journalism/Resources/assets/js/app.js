@@ -46,12 +46,12 @@ d3.csv("./assets/data/data.csv").then(function (data) {
   // =================================
   var xLinearScale = d3
     .scaleLinear()
-    .domain([20, d3.max(data, (d) => d.age)])
+    .domain(d3.extent(data, (d) => d.age))
     .range([0, width]);
   // // Step 6: Set up the y-axis domain
   var yLinearScale = d3
     .scaleLinear()
-    .domain([0, d3.max(data, (d) => d.healthcare)])
+    .domain(d3.extent(data, (d) => d.healthcare))
     .range([height, 0]);
 
   // create axes
@@ -66,6 +66,21 @@ d3.csv("./assets/data/data.csv").then(function (data) {
 
   chartGroup.append("g").call(leftAxis);
 
+
+  // Create axes labels
+  chartGroup.append("text")
+  .attr("transform", "rotate(-90)")
+  .attr("y", 0 - margin.left + 40)
+  .attr("x", 0 - (height / 2))
+  .attr("dy", "1em")
+  .attr("class", "axisText")
+  .text("Healthcare");
+
+  chartGroup.append("text")
+  .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
+  .attr("class", "axisText")
+  .text("Age");
+
   // create circles (use class from css'state circle')
   var circlesGroup = chartGroup
     .selectAll("circle")
@@ -76,6 +91,21 @@ d3.csv("./assets/data/data.csv").then(function (data) {
     .attr("cy", (d) => yLinearScale(d.healthcare))
     .attr("r", "15")
     .attr("class", "stateCircle");
+
+    var textGroup = chartGroup
+    .append("g")
+    .selectAll("text")
+    .data(data)
+    .enter()
+    .append("text")
+    .attr("x", (d) => xLinearScale(d.age)-0.5)
+    .attr("y", (d) => yLinearScale(d.healthcare)+5)
+    .attr("class", "stateText")
+    .html(function (d) {
+      return `${d.abbr}`
+    });
+
+  
   // using version 9 of d3 tips (html) d3 tips class in css
   // step 10 intialize tool tip
   var toolTip = d3
@@ -95,23 +125,6 @@ d3.csv("./assets/data/data.csv").then(function (data) {
     // on mouseout event
     .on("mouseout", function (data, index) {
       toolTip.hide(data);
-      // step 12 create axes labels
-      chartGroup
-        .append("text")
-        .attr(
-          "transform",
-          `translate(${width / 2}, ${height + margin.top + 30})`
-        )
-        .attr("class", "axisText")
-        .text("Age");
-      // left axis
-      chartGroup
-        .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left + 40)
-        .attr("x", 0 - height / 2)
-        .attr("dy", "1em")
-        .attr("class", "axisText")
-        .text("Without Access to Healthcare (%)");
+    
     });
 });
