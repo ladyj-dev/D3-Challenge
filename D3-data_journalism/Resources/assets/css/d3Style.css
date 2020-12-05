@@ -43,7 +43,7 @@
   width: 400px;
   height: 300px;
   content: " ";
-  background-image:("healthy_hands.png");
+  background-image: url("healthy_hands.png");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
